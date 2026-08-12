@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rhyzora — One meaning. Every interface.</title>
+  <meta name="description" content="Build CLI, TUI, Web, desktop, and MCP interfaces from declarative application and engine contracts.">
+  <meta property="og:title" content="Rhyzora — One meaning. Every interface.">
+  <meta property="og:description" content="A declarative application framework for Nim.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://asopitech-labs.github.io/rhyzora/">
+  <meta property="og:image" content="https://asopitech-labs.github.io/rhyzora/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav shell" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Rhyzora home"><span class="brand-mark"><i></i><i></i><i></i></span><span>RHYZORA</span></a>
+    <div class="nav-links"><a href="#concept">Concept</a><a href="#architecture">Architecture</a><a href="#principles">Principles</a></div>
+    <a class="github-link" href="https://github.com/asopitech-labs/rhyzora">GitHub <span>↗</span></a>
+  </nav>
+
+  <main>
+    <section class="hero shell" id="top">
+      <div>
+        <p class="eyebrow"><span></span> Declarative application framework for Nim</p>
+        <h1>One meaning.<br><em>Every interface.</em></h1>
+        <p class="hero-lead">Define application capabilities and interactions once. Project them into CLI, TUI, Web, desktop, and MCP interfaces.</p>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">Explore on GitHub <span>↗</span></a><a class="button ghost" href="#concept">See how it works <span>↓</span></a></div>
+        <p class="status"><i></i> Under design · Early development</p>
+      </div>
+      <div class="network" aria-label="Application DSL branching into five interface surfaces">
+        <div class="network-glow"></div><div class="network-core"><span>APPLICATION</span><strong>DSL</strong></div>
+        <div class="surface s1"><i></i>CLI</div><div class="surface s2"><i></i>TUI</div><div class="surface s3"><i></i>MCP</div><div class="surface s4"><i></i>WEB</div><div class="surface s5"><i></i>DESKTOP</div>
+        <div class="thread t1"></div><div class="thread t2"></div><div class="thread t3"></div><div class="thread t4"></div><div class="thread t5"></div>
+      </div>
+    </section>
+
+    <section class="manifesto shell" id="concept">
+      <p class="section-label">The premise</p>
+      <div class="manifesto-grid"><h2>Your application is<br><em>not its interface.</em></h2><div class="manifesto-copy"><p>Applications increasingly expose the same capabilities through many interfaces. Yet each implementation repeats operations, arguments, types, validation, errors, and workflows.</p><p class="accent-copy">Rhyzora makes those semantics explicit — and reusable.</p></div></div>
+    </section>
+
+    <section class="flow-section" id="architecture"><div class="shell">
+      <div class="section-heading"><div><p class="section-label">The architecture</p><h2>Contract to interface.<br>Without the duplication.</h2></div><p>Connect existing systems through typed engine contracts, express how their capabilities are used, and let each backend create the right experience.</p></div>
+      <div class="flow">
+        <article class="flow-card"><span class="card-number">01 / INPUT</span><h3>Engine sources</h3><ul><li>Native Nim</li><li>OpenAPI</li><li>Structured CLI</li><li>MCP tools</li></ul></article>
+        <div class="flow-arrow"><span>normalize</span>→</div>
+        <article class="flow-card contract"><span class="card-number">02 / CONTRACT</span><h3>Typed capabilities</h3><pre><b>operation</b> searchUsers:
+  input: query, limit
+  output: <b>seq</b>[User]
+  effect: read</pre></article>
+        <div class="flow-arrow"><span>project</span>→</div>
+        <article class="flow-card"><span class="card-number">03 / OUTPUT</span><h3>Native surfaces</h3><div class="surface-grid"><span>CLI</span><span>TUI</span><span>MCP</span><span>WEB</span><span>DESKTOP</span></div></article>
+      </div>
+    </div></section>
+
+    <section class="semantic shell">
+      <div><p class="section-label">Semantic UI generation</p><h2>Describe intent.<br><em>Not widgets.</em></h2><p class="body-copy">Rhyzora works above individual components. Define meaningful interactions; each backend decides how they should be represented.</p></div>
+      <div class="comparison"><div class="comparison-column muted"><span>INSTEAD OF</span><p>Label</p><p>Input</p><p>Button</p><p>Table</p><p>Dialog</p></div><div class="comparison-divider">→</div><div class="comparison-column vivid"><span>DESCRIBE</span><p>search</p><p>browse</p><p>inspect</p><p>select</p><p>confirm</p></div></div>
+    </section>
+
+    <section class="principles shell" id="principles"><p class="section-label">Design principles</p><div class="principle-list">
+      <article><span>01</span><h3>Semantics before presentation</h3><p>Describe what the application does before deciding how it looks.</p><i>↗</i></article>
+      <article><span>02</span><h3>Business logic stays outside the UI</h3><p>Engines expose typed capabilities. Interfaces consume them.</p><i>↗</i></article>
+      <article><span>03</span><h3>Backend-appropriate UX</h3><p>Each surface expresses the same intent in the way that fits its environment.</p><i>↗</i></article>
+    </div></section>
+
+    <section class="cta"><div class="orbit a"></div><div class="orbit b"></div><div class="shell cta-inner"><p class="section-label">Open source · MIT</p><h2>Build the meaning once.</h2><p>Help shape a new foundation for multi-interface applications.</p><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">View the repository <span>↗</span></a></div></section>
+  </main>
+  <footer class="shell"><a class="brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span>RHYZORA</span></a><p>One application. Every interface.</p><span>© 2026 asopitech-labs</span></footer>
+</body>
+</html>
