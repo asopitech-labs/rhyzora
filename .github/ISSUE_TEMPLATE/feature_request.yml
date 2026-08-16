@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a concrete capability or improvement for Rhyzora.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping shape Rhyzora. Early ideas and open questions are also welcome in Discussions.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What are you trying to build, and what is difficult today?
+      placeholder: Describe the application, engine source, and target interfaces.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed capability
+      description: What should Rhyzora express or generate?
+    validations:
+      required: true
+  - type: textarea
+    id: semantics
+    attributes:
+      label: Shared semantics
+      description: Which meaning should remain consistent across CLI, TUI, MCP, Web, or desktop?
+  - type: textarea
+    id: backend
+    attributes:
+      label: Backend-specific behavior
+      description: What should differ between interfaces?
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add examples, links, sketches, or alternatives.

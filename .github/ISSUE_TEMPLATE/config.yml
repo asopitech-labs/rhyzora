@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Rhyzora Discussions
+    url: https://github.com/asopitech-labs/rhyzora/discussions
+    about: Share a use case, question, or early idea before turning it into an issue.
