@@ -13,6 +13,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="participate.css">
 </head>
 <body>
   <nav class="nav shell" aria-label="Primary navigation">
@@ -27,7 +28,7 @@
         <p class="eyebrow"><span></span> Declarative application framework for Nim</p>
         <h1>One meaning.<br><em>Every interface.</em></h1>
         <p class="hero-lead">Define application capabilities and interactions once. Project them into CLI, TUI, Web, desktop, and MCP interfaces.</p>
-        <div class="hero-actions"><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">Explore on GitHub <span>↗</span></a><a class="button ghost" href="#concept">See how it works <span>↓</span></a></div>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">Star Rhyzora on GitHub <span>↗</span></a><a class="button ghost" href="#concept">See how it works <span>↓</span></a></div>
         <p class="status"><i></i> Under design · Early development</p>
       </div>
       <div class="network" aria-label="Application DSL branching into five interface surfaces">
@@ -67,8 +68,38 @@
       <article><span>03</span><h3>Backend-appropriate UX</h3><p>Each surface expresses the same intent in the way that fits its environment.</p><i>↗</i></article>
     </div></section>
 
-    <section class="cta"><div class="orbit a"></div><div class="orbit b"></div><div class="shell cta-inner"><p class="section-label">Open source · MIT</p><h2>Build the meaning once.</h2><p>Help shape a new foundation for multi-interface applications.</p><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">View the repository <span>↗</span></a></div></section>
+    <section class="participate" id="participate"><div class="shell">
+      <p class="section-label">Open source · MIT</p>
+      <div class="participate-heading"><h2>Interested in Rhyzora?</h2><p>Start small: follow the project, share the idea, or help shape it.</p></div>
+      <div class="action-grid">
+        <a class="action-card" href="https://github.com/asopitech-labs/rhyzora"><span>01 / SUPPORT</span><h3>Star on GitHub</h3><p>Save the project and help more people discover it.</p><i>↗</i></a>
+        <a class="action-card" href="https://github.com/asopitech-labs/rhyzora/subscription"><span>02 / FOLLOW</span><h3>Watch development</h3><p>Choose the activity you want GitHub to notify you about.</p><i>↗</i></a>
+        <button class="action-card share-card" id="share-rhyzora" type="button"><span>03 / SPREAD</span><h3>Share Rhyzora</h3><p>Send the idea to someone building across multiple interfaces.</p><i>↗</i></button>
+      </div>
+      <div class="join-panel"><div><span>HAVE A USE CASE IN MIND?</span><h3>Help test the idea against a real application.</h3><p>Tell us which engine and interfaces you would connect, or open a concrete issue.</p></div><div class="join-actions"><a class="button primary" href="https://github.com/asopitech-labs/rhyzora/discussions">Join the discussion <span>↗</span></a><a class="button ghost" href="https://github.com/asopitech-labs/rhyzora/issues/new/choose">Open an issue <span>↗</span></a></div></div>
+      <p class="share-status" id="share-status" aria-live="polite"></p>
+    </div></section>
+
+    <section class="cta"><div class="orbit a"></div><div class="orbit b"></div><div class="shell cta-inner"><p class="section-label">One application · Every interface</p><h2>Build the meaning once.</h2><p>Help shape a new foundation for multi-interface applications.</p><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">View the repository <span>↗</span></a></div></section>
   </main>
   <footer class="shell"><a class="brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span>RHYZORA</span></a><p>One application. Every interface.</p><span>© 2026 asopitech-labs</span></footer>
+  <script>
+    const shareButton = document.querySelector('#share-rhyzora');
+    const shareStatus = document.querySelector('#share-status');
+    const shareData = { title: 'Rhyzora', text: 'Rhyzora — One meaning. Every interface.', url: 'https://asopitech-labs.github.io/rhyzora/' };
+    shareButton.addEventListener('click', async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+          shareStatus.textContent = 'Thanks for sharing Rhyzora.';
+        } else {
+          await navigator.clipboard.writeText(shareData.url);
+          shareStatus.textContent = 'Link copied to your clipboard.';
+        }
+      } catch (error) {
+        if (error.name !== 'AbortError') shareStatus.textContent = 'Share this link: ' + shareData.url;
+      }
+    });
+  </script>
 </body>
 </html>

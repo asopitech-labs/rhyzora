@@ -1,0 +1,71 @@
+.participate {
+  background: #fff;
+  padding: 110px 0 120px;
+  border-top: 1px solid var(--line);
+}
+
+.participate-heading {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 58px;
+}
+
+.participate-heading h2,
+.participate-heading p { margin-bottom: 0; }
+.participate-heading p { color: #52635f; font-size: 17px; line-height: 1.7; }
+.action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+.action-card {
+  appearance: none;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  padding: 27px;
+  min-height: 240px;
+  position: relative;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.action-card:hover { background: var(--acid); transform: translateY(-3px); }
+.action-card > span,
+.join-panel > div > span { font-size: 9px; letter-spacing: .16em; font-weight: 900; opacity: .58; }
+.action-card h3 { font-size: 23px; margin: 48px 0 16px; }
+.action-card p { color: #52635f; line-height: 1.55; font-size: 14px; max-width: 280px; }
+.action-card i { position: absolute; right: 24px; bottom: 22px; font-style: normal; }
+
+.join-panel {
+  margin-top: 10px;
+  background: var(--ink);
+  color: #fff;
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 45px;
+  align-items: center;
+}
+
+.join-panel h3 { font-size: 24px; margin: 14px 0 8px; }
+.join-panel p { color: #9eb2ac; margin: 0; line-height: 1.55; }
+.join-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.join-actions .primary { background: var(--acid); color: var(--ink); }
+.join-actions .ghost { border-color: rgba(255,255,255,.25); }
+.share-status { min-height: 20px; margin: 14px 0 0; color: #52635f; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .participate-heading { grid-template-columns: 1fr; gap: 24px; }
+  .action-grid { grid-template-columns: 1fr; }
+  .join-panel { grid-template-columns: 1fr; }
+  .join-actions { align-items: stretch; }
+}
+
+@media (max-width: 560px) {
+  .participate { padding: 80px 0; }
+  .action-card { min-height: 210px; }
+  .join-panel { padding: 26px; }
+  .join-actions .button { width: 100%; }
+}
