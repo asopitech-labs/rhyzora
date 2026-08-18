@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Rhyzora — One meaning. Every interface.</title>
-  <meta name="description" content="Build CLI, TUI, Web, desktop, and MCP interfaces from declarative application and engine contracts.">
+  <meta name="description" content="Build product interfaces, VS Code tooling, playgrounds, test UIs, mocks, and harnesses from declarative application and engine contracts.">
   <meta property="og:title" content="Rhyzora — One meaning. Every interface.">
   <meta property="og:description" content="A declarative application framework for Nim.">
   <meta property="og:type" content="website">
@@ -14,11 +14,12 @@
   <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="participate.css">
+  <link rel="stylesheet" href="development.css">
 </head>
 <body>
   <nav class="nav shell" aria-label="Primary navigation">
     <a class="brand" href="#top" aria-label="Rhyzora home"><span class="brand-mark"><i></i><i></i><i></i></span><span>RHYZORA</span></a>
-    <div class="nav-links"><a href="#concept">Concept</a><a href="#architecture">Architecture</a><a href="#principles">Principles</a></div>
+    <div class="nav-links"><a href="#concept">Concept</a><a href="#architecture">Architecture</a><a href="#development">Development</a></div>
     <a class="github-link" href="https://github.com/asopitech-labs/rhyzora">GitHub <span>↗</span></a>
   </nav>
 
@@ -27,7 +28,7 @@
       <div>
         <p class="eyebrow"><span></span> Declarative application framework for Nim</p>
         <h1>One meaning.<br><em>Every interface.</em></h1>
-        <p class="hero-lead">Define application capabilities and interactions once. Project them into CLI, TUI, Web, desktop, and MCP interfaces.</p>
+        <p class="hero-lead">Define application capabilities and interactions once. Project them into product interfaces and development surfaces—from CLI and Web to VS Code, playgrounds, test UIs, and mocks.</p>
         <div class="hero-actions"><a class="button primary" href="https://github.com/asopitech-labs/rhyzora">Star Rhyzora on GitHub <span>↗</span></a><a class="button ghost" href="#concept">See how it works <span>↓</span></a></div>
         <p class="status"><i></i> Under design · Early development</p>
       </div>
@@ -53,8 +54,19 @@
   output: <b>seq</b>[User]
   effect: read</pre></article>
         <div class="flow-arrow"><span>project</span>→</div>
-        <article class="flow-card"><span class="card-number">03 / OUTPUT</span><h3>Native surfaces</h3><div class="surface-grid"><span>CLI</span><span>TUI</span><span>MCP</span><span>WEB</span><span>DESKTOP</span></div></article>
+        <article class="flow-card"><span class="card-number">03 / OUTPUT</span><h3>Product &amp; dev surfaces</h3><div class="surface-grid"><span>CLI</span><span>TUI</span><span>MCP</span><span>WEB</span><span>DESKTOP</span><span>VS CODE</span><span>PLAYGROUND</span><span>TEST UI</span><span>MOCK</span></div></article>
       </div>
+    </div></section>
+
+    <section class="development" id="development"><div class="shell">
+      <div class="development-heading"><div><p class="section-label">Development surfaces</p><h2>The same contract.<br><em>A better test harness.</em></h2></div><p>Rhyzora can project its typed operations and application semantics into tools for authoring, exploration, mocking, and repeatable testing—not only end-user interfaces.</p></div>
+      <div class="development-grid">
+        <article><span>01 / DEV</span><h3>VS Code extension</h3><p>Inspect contracts, run operations, preview application flows, and provide authoring support inside the editor.</p></article>
+        <article><span>02 / DEV</span><h3>Playground</h3><p>Explore operations and interactions immediately with generated inputs, outputs, validation, and state.</p></article>
+        <article><span>03 / DEV</span><h3>Test UI &amp; mocks</h3><p>Generate a controllable UI and mock engines for scenarios, edge cases, errors, and workflow checks.</p></article>
+        <article><span>04 / DEV</span><h3>Harness adapters</h3><p>Wrap contracts as fixtures, drivers, and programmatic APIs for integration, end-to-end, and agent tests.</p></article>
+      </div>
+      <div class="harness-line"><span>ENGINE CONTRACT</span><i>→</i><b>Fixture · Driver · Mock · Scenario</b><i>→</i><span>TEST RUNNER / CI / AGENT</span></div>
     </div></section>
 
     <section class="semantic shell">
