@@ -58,7 +58,7 @@ Rhyzora is being shaped in the open. You do not need to write code to take part.
 - **[Star the repository](https://github.com/asopitech-labs/rhyzora)** to save the project and help others discover it.
 - **[Watch the repository](https://github.com/asopitech-labs/rhyzora/subscription)** to follow the activity that matters to you.
 - **[Share the concept site](https://asopitech-labs.github.io/rhyzora/)** with people building applications across multiple interfaces.
-- **[Join the discussion](https://github.com/asopitech-labs/rhyzora/discussions)** to propose a use case or challenge the model.
+- **[Share your use case](https://github.com/asopitech-labs/rhyzora/discussions/1)** and tell us which systems and interfaces you would connect, what should stay shared, or where the model might break.
 - **[Open an issue](https://github.com/asopitech-labs/rhyzora/issues/new/choose)** for a concrete feature, problem, or implementation task.
 
 ## Core concepts
