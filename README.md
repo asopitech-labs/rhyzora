@@ -1,12 +1,12 @@
 # Rhyzora
 
-**Build CLI, TUI, Web, desktop, and MCP interfaces from declarative application and engine contracts.**
+**Build product interfaces and development surfaces—from CLI, TUI, Web, desktop, and MCP to VS Code tooling, playgrounds, test UIs, mocks, and harnesses—from declarative application and engine contracts.**
 
 Rhyzora is a Nim framework for defining application capabilities and interactions independently from how they are presented.
 
 **[Explore the concept site](https://asopitech-labs.github.io/rhyzora/)**
 
-Instead of implementing a CLI, TUI, Web application, desktop application, and MCP server separately, Rhyzora describes the underlying operations and application semantics once and projects them into different interfaces.
+Instead of implementing each product interface and development tool separately, Rhyzora describes the underlying operations and application semantics once and projects them into runtime, authoring, exploration, and testing surfaces.
 
 ```text
                          Application
@@ -15,9 +15,11 @@ Instead of implementing a CLI, TUI, Web application, desktop application, and MC
                              │
                      Application IR
                              │
-          ┌──────────┬───────┼───────┬──────────┐
-          │          │       │       │          │
-         CLI        TUI     MCP     Web      Desktop
+               ┌─────────────┴─────────────┐
+               │                           │
+       Product interfaces          Development surfaces
+     CLI / TUI / MCP / Web        VS Code / Playground
+           / Desktop              Test UI / Mock / Harness
 ```
 
 Business logic is kept separate from presentation. Existing APIs, command-line tools, and native Nim libraries can be connected through engine contracts.
@@ -29,7 +31,7 @@ Business logic is kept separate from presentation. Existing APIs, command-line t
  MCP ─────────┤                         │
  Other ───────┘                         │
                                         ▼
-                          CLI / TUI / MCP / Web / Desktop
+                         Product and development surfaces
 ```
 
 ## Why Rhyzora?
@@ -41,7 +43,9 @@ A single operation may need to appear as:
 * a CLI command for scripts and developers,
 * an interactive TUI for terminal users,
 * a Web or desktop interface for human users,
-* an MCP tool for AI agents.
+* an MCP tool for AI agents,
+* a VS Code extension or playground for developers,
+* a generated test UI, mock engine, or harness adapter for automated validation.
 
 These interfaces usually duplicate the same information: operations, arguments, types, validation, errors, actions, resources, and workflows.
 
@@ -133,6 +137,30 @@ MCP       delete_user tool
 
 Rhyzora preserves the operation's meaning rather than attempting to reproduce an identical UI across every backend.
 
+### Development and testing surfaces
+
+The same contracts can also power tools used while building and validating an application:
+
+```text
+VS Code extension   Inspect contracts, run operations, preview flows, assist authoring
+Playground          Explore generated inputs, outputs, validation, state, and errors
+Test UI             Drive scenarios through a controllable generated interface
+Mock engine         Replace real bindings with deterministic responses and failures
+Harness adapter     Expose fixtures, drivers, and programmatic APIs to test runners
+```
+
+These are first-class projections of the application model, not a separate testing model. A harness can wrap an engine contract and Application DSL as reusable fixtures, drivers, mocks, and scenarios for integration tests, end-to-end tests, CI, or agent evaluation.
+
+```text
+Engine Contract + Application DSL
+                │
+                ▼
+     Fixture / Driver / Mock / Scenario
+                │
+                ▼
+        Test runner / CI / Agent
+```
+
 ## Engine interoperability
 
 Rhyzora's engine model is designed around typed operations.
@@ -216,12 +244,14 @@ Platform primitives
                           │
               Interaction / State Model
                           │
-       ┌─────────┬────────┼────────┬─────────┐
-       │         │        │        │         │
-      CLI       TUI      MCP      Web     Desktop
+               ┌──────────┴──────────┐
+               │                     │
+      Product interfaces    Development surfaces
+    CLI / TUI / MCP / Web   VS Code / Playground
+          / Desktop         Test UI / Mock / Harness
 ```
 
-The core is independent of terminal renderers, Web frameworks, desktop toolkits, and transport implementations.
+The core is independent of terminal renderers, Web frameworks, desktop toolkits, editor integrations, test runners, and transport implementations.
 
 ## Design principles
 
@@ -232,7 +262,7 @@ Describe what an application does before deciding how it looks.
 Engines expose typed capabilities. Interfaces consume them.
 
 **One application, multiple interfaces.**
-CLI, TUI, Web, desktop, and agent interfaces are different projections of the same application semantics.
+Product interfaces, editor tooling, playgrounds, mocks, and test harnesses are different projections of the same application semantics.
 
 **Use existing systems.**
 Existing Web APIs and command-line applications should be usable as engines rather than rewritten.
