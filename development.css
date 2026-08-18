@@ -39,12 +39,18 @@
 .harness-line i:after { content: "→"; position: absolute; right: -3px; top: -9px; font-size: 16px; }
 .harness-line b { font-size: 12px; text-align: center; }
 
+.use-case-invite { margin-top: 12px; padding: 34px 38px; border: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; background: #fff; }
+.use-case-invite > div > span { font-size: 9px; letter-spacing: .16em; font-weight: 900; color: #768581; }
+.use-case-invite h3 { font-size: 25px; margin: 12px 0 8px; }
+.use-case-invite p { color: #52635f; line-height: 1.6; margin: 0; max-width: 700px; }
+
 @media (max-width: 900px) {
   .development-heading { grid-template-columns: 1fr; gap: 38px; }
   .development-grid { grid-template-columns: 1fr 1fr; }
   .harness-line { grid-template-columns: 1fr; text-align: center; }
   .harness-line i { height: 35px; width: 1px; margin: auto; }
   .harness-line i:after { content: "↓"; right: -7px; top: 17px; }
+  .use-case-invite { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
